@@ -75,34 +75,42 @@ document.getElementById('BTN').addEventListener('click', function(e) {
 
 
 
-
+//cambiar el formato de fecha a dd//mm/aaa//
 
 const inputFechaIc = document.getElementById('fechaIc');
 
 inputFechaIc.addEventListener('input', (e) => {
-  const fecha = new Date(inputFechaIc.value);
-  const dia = fecha.getDate().toString().padStart(2, '0');
-  const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
-  const año = fecha.getFullYear();
+  const inputValue = inputFechaIc.value; // Ejemplo: "2025-07-01"
+  const [año, mes, dia] = inputValue.split('-'); // Extrae año, mes, día
+
+  // Eliminar input oculto previo para evitar duplicados
+  const existingHiddenInputIc = document.querySelector('input[name="fechaIcFormatted"]');
+  if (existingHiddenInputIc) {
+    existingHiddenInputIc.remove();
+  }
 
   const inputFechaOculta = document.createElement('input');
   inputFechaOculta.type = 'hidden';
   inputFechaOculta.name = 'fechaIcFormatted';
-  inputFechaOculta.value = `${dia}/${mes}/${año}`;
+  inputFechaOculta.value = `${dia}/${mes}/${año}`; // Formato dd/mm/yyyy
   inputFechaIc.parentNode.appendChild(inputFechaOculta);
 });
 
 const inputFechaAgenda = document.getElementById('fechaAgenda');
 
 inputFechaAgenda.addEventListener('input', (e) => {
-  const fecha = new Date(inputFechaAgenda.value);
-  const dia = fecha.getDate().toString().padStart(2, '0');
-  const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
-  const año = fecha.getFullYear();
+  const inputValue = inputFechaAgenda.value; // Ejemplo: "2025-07-01"
+  const [año, mes, dia] = inputValue.split('-'); // Extrae año, mes, día
+
+  // Eliminar input oculto previo para evitar duplicados
+  const existingHiddenInputAgenda = document.querySelector('input[name="fechaAgendaFormatted"]');
+  if (existingHiddenInputAgenda) {
+    existingHiddenInputAgenda.remove();
+  }
 
   const inputFechaOculta = document.createElement('input');
   inputFechaOculta.type = 'hidden';
   inputFechaOculta.name = 'fechaAgendaFormatted';
-  inputFechaOculta.value = `${dia}/${mes}/${año}`;
+  inputFechaOculta.value = `${dia}/${mes}/${año}`; // Formato dd/mm/yyyy
   inputFechaAgenda.parentNode.appendChild(inputFechaOculta);
 });
