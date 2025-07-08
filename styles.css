@@ -272,3 +272,21 @@ width: 5%;
     margin-left: 40px;
 }
 
+
+
+
+  .boton {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #2e98f0;
+    color: white;
+    text-decoration: none;
+    text-align: end;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .boton:hover {
+    background-color: #f19934;
+  }
+
+ 
