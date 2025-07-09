@@ -90,9 +90,10 @@ inputFechaIc.addEventListener('input', (e) => {
   }
 
   const inputFechaOculta = document.createElement('input');
-  inputFechaOculta.type = 'hidden';
+  inputFechaOculta.type = 'text'; // Cambia el tipo a text
   inputFechaOculta.name = 'fechaIcFormatted';
   inputFechaOculta.value = `${dia}/${mes}/${año}`; // Formato dd/mm/yyyy
+  inputFechaOculta.classList.add('oculto'); // Agrega la clase oculto
   inputFechaIc.parentNode.appendChild(inputFechaOculta);
 });
 
@@ -109,8 +110,9 @@ inputFechaAgenda.addEventListener('input', (e) => {
   }
 
   const inputFechaOculta = document.createElement('input');
-  inputFechaOculta.type = 'hidden';
+  inputFechaOculta.type = 'text'; // Cambia el tipo a text
   inputFechaOculta.name = 'fechaAgendaFormatted';
   inputFechaOculta.value = `${dia}/${mes}/${año}`; // Formato dd/mm/yyyy
+  inputFechaOculta.classList.add('oculto'); // Agrega la clase oculto
   inputFechaAgenda.parentNode.appendChild(inputFechaOculta);
 });
